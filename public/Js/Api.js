@@ -24,11 +24,7 @@ export class Api {
 
     getInitialCards() {
         return fetch(`${this.options.baseUrl}/cards`, {
-            method: 'GET',
-            headers: {
-              authorization: this.options.headers.authorization,
-              'Content-Type': 'application/json'
-            }
+            
           })
           .then(res => {
             if (res.ok) {
