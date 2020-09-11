@@ -1,19 +1,23 @@
 module.exports = {
     "env": {
         "browser": true,
-        "es2020": true,
-        "node": true
+        "es2020": true
     },
     "extends": [
-      "eslint:recommended",
-      "airbnb-base"
+        "eslint:recommended",
+        "plugin:react/recommended"
     ],
     "parserOptions": {
-        "ecmaVersion": 11,
-        "sourceType": "module"
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 11
     },
+    "plugins": [
+        "react"
+    ],
     "rules": {
       "semi": ["error", "always"],
-      "quotes": ["error", "double"]
+        "quotes": ["error", "double"]
     }
 };
