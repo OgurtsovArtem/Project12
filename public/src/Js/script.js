@@ -1,13 +1,12 @@
-import {Api} from '../js/Api.js';
-import {api} from '../js/Api.js';
-import {Card} from '../Js/Card.js';
-import {CardList} from '../Js/CardList.js';
-import {FormValidator} from '../Js/FormValidator.js';
-import {Popup} from '../Js/Popup.js';
-import {PopupRender} from '../Js/PopupRender.js';
-import {UserInfo} from '../Js/UserInfo.js';
-import {PopupSubmith} from '../Js/PopupSubmith.js';
-// Создаем уникальный номер для каждой карточки.
+import {Api, api} from './Api.js';
+import {Card} from './Card.js';
+import {CardList} from './CardList.js';
+import {FormValidator} from './FormValidator.js';
+import {Popup} from './Popup.js';
+import {PopupRender} from './PopupRender.js';
+import {UserInfo} from './UserInfo.js';
+import {PopupSubmith} from './PopupSubmith.js';
+
 export const idCreator = () => {
   const id = `f${(~~(Math.random() * 1e8)).toString(16)}`;
   return id;
@@ -41,7 +40,7 @@ export const popupCardInput = document.querySelector('.popup').querySelectorAll(
 export const popupEditButton = document.querySelector('.popup__button_edit');
 export const popupButton = document.querySelector('.popup__button');
 //==========================================КЛАССЫ==========================================//
-export const cardList = new CardList(container, classCreate, api);
+export const cardList = new CardList(container, classCreate,api);
 export const validationCard = new FormValidator(words, popupCardInput, popupButton);
 export const validationEdit = new FormValidator(words, popupEditInput, popupEditButton);
 export const userInfo = new UserInfo(formEdit);

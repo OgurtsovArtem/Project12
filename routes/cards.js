@@ -1,17 +1,17 @@
-const router = require('express').Router();
-const fsPromises = require('fs').promises;
-const path = require('path');
+/* eslint-disable no-undef */
+const router = require("express").Router();
+const fsPromises = require("fs").promises;
+const path = require("path");
 
 const cardsArray = (req, res) => {
-    fsPromises.readFile(path.join(__dirname, '../data/cards.json'))
+    fsPromises.readFile(path.join(__dirname, "../data/cards.json"))
     .then((data) => {
-        const users = JSON.parse(data);
-        res.send(users);
+      res.send(JSON.parse(data));
     })
     .catch(err => {
-        res.send(err);
+        res.status(500).send({ message: `Ошибка: ${err}` });
     });
 };
-router.get('/cards',cardsArray);
+router.get("/cards",cardsArray);
 
 module.exports = router;
